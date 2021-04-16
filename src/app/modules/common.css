@@ -1,0 +1,82 @@
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 70%;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #a9a9a9;
+  background-color: #c1bdbd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.fl-right{
+  float: right;
+}
+
+.fl-left{
+  float: left;
+}
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #000;
+}
+
+.time-left {
+  float: left;
+  color: #000;
+}
+.message-input {
+  position: absolute;
+  bottom: 45px;
+  width: 100%;
+  z-index: 99;
+}
+.message-input .wrap {
+  position: relative;
+}
+.message-input .wrap input {
+  font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
+  float: left;
+  border: none;
+  width: 43%;
+  padding: 11px 32px 10px 8px;
+  font-size: 0.8em;
+  color: #32465a;
+  margin-right: 10px;
+}
+
+.message-section{
+  height: 90%;
+  display: block;
+  position: relative;
+  overflow: scroll;
+}
+
+.chatpersonSvg{
+  justify-content: center;
+    height: 50px;
+    width: 50px;
+    padding: 7px;
+    font-size: 24px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2px;
+    vertical-align: middle;
+}
