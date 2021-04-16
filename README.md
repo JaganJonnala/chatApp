@@ -1,4 +1,6 @@
 # ChatApp
+Chat app using PubSub Pattern. There is no communication between two components but based on PubSub Pattern the data rendering
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
