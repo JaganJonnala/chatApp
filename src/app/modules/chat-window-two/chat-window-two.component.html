@@ -1,5 +1,5 @@
 <div style="height: 100%;">
-  <h4 style="color: #fff;">Hi {{me}} - You are chatting with {{with}}</h4>
+  <h4>Hi {{me}} - You are chatting with {{with}}</h4>
 
   <div class="message-section">
     <div *ngFor="let chat of messages">
@@ -13,8 +13,9 @@
   </div>
 
   <div class="message-input">
+    <label style="color: #fff;" *ngIf="isTyping">{{with}} Typing...</label>
     <div class="wrap">
-    <input type="text" placeholder="Write your message..." [(ngModel)]="inputText"/>
+    <input (click)="onInput()" (blur)="onBlur()" type="text" placeholder="Write your message..." [(ngModel)]="inputText"/>
     <button class="btn btn-primary submit" (click)="sendMsg()">SEND</button>
     </div>
   </div>

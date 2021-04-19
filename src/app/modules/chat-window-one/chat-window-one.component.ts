@@ -12,11 +12,17 @@ export class ChatWindowOneComponent implements OnInit {
   inputText:string="";
   messages:Array<any>=[];
   portEvent:string="lts-JjJagan1000"
+  isTyping:boolean = false;
   constructor() { }
 
   ngOnInit() {
     pubsub.subscribe(this.portEvent, data => {
       this.messages.push(data.message);
+    });
+
+    pubsub.subscribe(this.portEvent+'Typing', e => {
+      if(e.name !== this.me)
+        this.isTyping = e.isTyping;
     });
   }
 
@@ -30,6 +36,14 @@ export class ChatWindowOneComponent implements OnInit {
 
     pubsub.publish(this.portEvent, {message:msg});
     this.inputText = "";
+  }
+
+  onInput(){
+    pubsub.publish(this.portEvent+'Typing',{name: this.me, isTyping:true});
+  }
+
+  onBlur(){
+    pubsub.publish(this.portEvent+'Typing',{name: this.me, isTyping:false});
   }
 
   formatAMPM(date) {

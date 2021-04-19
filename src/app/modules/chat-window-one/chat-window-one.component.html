@@ -13,8 +13,9 @@
   </div>
 
   <div class="message-input">
+    <label style="color: #000;" *ngIf="isTyping">{{with}} Typing...</label>
     <div class="wrap">
-    <input type="text" placeholder="Write your message..." [(ngModel)]="inputText"/>
+    <input (click)="onInput()" (blur)="onBlur()" type="text" placeholder="Write your message..." [(ngModel)]="inputText"/>
     <button class="btn btn-primary submit" (click)="sendMsg()">SEND</button>
     </div>
   </div>
